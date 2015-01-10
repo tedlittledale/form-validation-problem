@@ -14,7 +14,8 @@
     "url": "https://github.com/ThibWeb/form-validation-problem/issues"
   },
   "dependencies": {
-    "validate-js": "^1.5.0"
+    "validate-js": "^1.5.0",
+    "zepto": "0.0.4"
   },
   "devDependencies": {
     "browser-sync": "^1.8.3",

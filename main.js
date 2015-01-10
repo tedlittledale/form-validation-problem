@@ -1,8 +1,7 @@
-(function (FormValidator) {
+(function ($, FormValidator) {
   'use strict';
 
   var rules = [
-
     {
       name: 'email',
       rules: 'required|valid_email'
@@ -55,4 +54,4 @@
     return tiger.checked;
   });
 
-}(window.FormValidator));
+}(window.Zepto, window.FormValidator));
