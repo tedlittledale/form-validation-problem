@@ -41,7 +41,8 @@
 
   validator.registerCallback('multiple_checked', function(_, nbToCheck, validator) {
     var nbChecked = $('[name=' + validator.name + ']').reduce(function (acc, elt) {
-      return $(elt).is(':checked') ? 1 : 0;
+      acc += $(elt).is(':checked') ? 1 : 0;
+      return acc;
     }, 0);
 
     return nbChecked >= nbToCheck;
