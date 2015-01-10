@@ -1,9 +1,13 @@
 .idea
 .sass-cache
 .DS_Store
-node_modules
 build
 errors.log
 dist
 .tmp
 npm-debug.log
+
+!node_modules
+node_modules/*
+!node_modules/validate-js
+!node_modules/zepto
