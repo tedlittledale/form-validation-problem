@@ -12,7 +12,6 @@
     },
     {
       name: 'colour',
-      display: 'required',
       rules: 'required'
     },
     {
@@ -40,18 +39,16 @@
     }
   });
 
-  validator.registerCallback('multiple_checked', function(value, nbToCheck, validator) {
-    var nbChecked = 0;
-    // TODO: Reduce.
-    for (var i = 0, len = validator.element.length; i < len; i++) {
-      nbChecked += validator.element[i].checked ? 1 : 0;
-    }
+  validator.registerCallback('multiple_checked', function(_, nbToCheck, validator) {
+    var nbChecked = $('[name=' + validator.name + ']').reduce(function (acc, elt) {
+      return $(elt).is(':checked') ? 1 : 0;
+    }, 0);
+
     return nbChecked >= nbToCheck;
   });
 
-  validator.registerConditional('tiger_chosen', function(field) {
-    var tiger = document.getElementById('tiger');
-    return tiger.checked;
+  validator.registerConditional('tiger_chosen', function() {
+    return $('#tiger').is(':checked');
   });
 
 }(window.Zepto, window.FormValidator));
