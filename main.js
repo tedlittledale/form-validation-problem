@@ -30,7 +30,6 @@
     $('.error').removeClass('error');
 
     if (errors.length > 0) {
-      console.table(errors);
       event.preventDefault();
 
       errors.forEach(function displayError(error) {
@@ -39,6 +38,7 @@
     }
   });
 
+  // Validate that multiple checkboxes are checked.
   validator.registerCallback('multiple_checked', function(_, nbToCheck, validator) {
     var nbChecked = $('[name=' + validator.name + ']').reduce(function (acc, elt) {
       acc += $(elt).is(':checked') ? 1 : 0;
