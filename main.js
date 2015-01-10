@@ -27,18 +27,18 @@
   ];
 
   var validator = new FormValidator('awesome_form', rules, function(errors, event) {
+    // Reset errors on each validation.
+    $('.error').removeClass('error');
+
     if (errors.length > 0) {
       console.table(errors);
       event.preventDefault();
-      errors.forEach(displayError);
+
+      errors.forEach(function displayError(error) {
+        $(error.element).parent().addClass('error');
+      });
     }
   });
-
-  function displayError(error) {
-    var parent = error.element.parentNode;
-    // TODO: Handle case where error is triggered multiple times on the same element.
-    parent.className = parent.className + ' error';
-  }
 
   validator.registerCallback('multiple_checked', function(value, nbToCheck, validator) {
     var nbChecked = 0;
