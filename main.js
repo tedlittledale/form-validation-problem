@@ -22,7 +22,8 @@
     },
     {
       name: 'tiger_type',
-      rules: 'required'
+      rules: 'required',
+      depends: 'tiger_chosen'
     }
   ];
 
@@ -34,6 +35,12 @@
     }
   });
 
+  function displayError(error) {
+    var parent = error.element.parentNode;
+    // TODO: Handle case where error is triggered multiple times on the same element.
+    parent.className = parent.className + ' error';
+  }
+
   validator.registerCallback('multiple_checked', function(value, nbToCheck, validator) {
     var nbChecked = 0;
     // TODO: Reduce.
@@ -43,10 +50,9 @@
     return nbChecked >= nbToCheck;
   });
 
-  function displayError(error) {
-    var parent = error.element.parentNode;
-    // TODO: Handle case where error is triggered multiple times on the same element.
-    parent.className = parent.className + ' error';
-  }
+  validator.registerConditional('tiger_chosen', function(field) {
+    var tiger = document.getElementById('tiger');
+    return tiger.checked;
+  });
 
 }(window.FormValidator));
