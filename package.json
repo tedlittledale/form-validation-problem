@@ -1,0 +1,27 @@
+{
+  "name": "form-validation-problem",
+  "version": "0.1.0",
+  "author": "ThibWeb",
+  "license": "ISC",
+  "description": "",
+  "main": "index.html",
+  "homepage": "https://github.com/ThibWeb/form-validation-problem",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ThibWeb/form-validation-problem.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ThibWeb/form-validation-problem/issues"
+  },
+  "dependencies": {
+    "validate-js": "^1.5.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^1.8.3",
+    "jshint": "^2.5.11"
+  },
+  "scripts": {
+    "start": "browser-sync start --server --files 'index.html, *.js' --no-notify",
+    "test": "jshint *.js && echo \"--> Do not forget to run the Selenium tests!\""
+  }
+}
