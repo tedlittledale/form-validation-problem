@@ -137,11 +137,14 @@
             </p>
         */
         .error > input,
-        .error > label {
+        .error > select,
+        .error > label,
+        .error > .label {
             color: red;
         }
 
-        .error > input {
+        .error > input,
+        .error > select {
             border-color: red;
         }
 
@@ -163,7 +166,7 @@
                 <label class='label' for='password'>
                     Password
                 </label>
-                <input class='error' type='password' id='password' name='username'>
+                <input class='error' type='password' id='password' name='password'>
             </p>
         </fieldset>
 

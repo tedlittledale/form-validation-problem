@@ -34,7 +34,7 @@
       event.preventDefault();
 
       errors.forEach(function displayError(error) {
-        $(error.element).parent().addClass('error');
+        $('[name=' + error.name + ']').parent().addClass('error');
       });
     }
   });
