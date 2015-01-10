@@ -18,12 +18,11 @@
     },
     {
       name: 'animal',
-      rules: 'required'
+      rules: 'required|callback_multiple_checked[2]'
     },
     {
       name: 'tiger_type',
-      // TODO: Add custom rule for "if tiger" case.
-      rules: ''
+      rules: 'required'
     }
   ];
 
@@ -33,6 +32,15 @@
       event.preventDefault();
       errors.forEach(displayError);
     }
+  });
+
+  validator.registerCallback('multiple_checked', function(value, nbToCheck, validator) {
+    var nbChecked = 0;
+    // TODO: Reduce.
+    for (var i = 0, len = validator.element.length; i < len; i++) {
+      nbChecked += validator.element[i].checked ? 1 : 0;
+    }
+    return nbChecked >= nbToCheck;
   });
 
   function displayError(error) {
