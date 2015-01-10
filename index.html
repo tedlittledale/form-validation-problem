@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <title>Form validation problem</title>
+    <title>Form validation problem :)</title>
     <style>
         /*
             -------------------------------------------------------------------
@@ -137,11 +137,14 @@
             </p>
         */
         .error > input,
-        .error > label {
+        .error > select,
+        .error > label,
+        .error > .label {
             color: red;
         }
 
-        .error > input {
+        .error > input,
+        .error > select {
             border-color: red;
         }
 
@@ -149,7 +152,7 @@
 </head>
 
 <body>
-    <form method='post' action=''>
+    <form name='awesome_form' method='post' action=''>
         <h1>Fill out this awesome form</h1>
         <fieldset>
             <h3>Your details</h3>
@@ -163,7 +166,7 @@
                 <label class='label' for='password'>
                     Password
                 </label>
-                <input class='error' type='password' id='password' name='username'>
+                <input class='error' type='password' id='password' name='password'>
             </p>
         </fieldset>
 
@@ -221,5 +224,9 @@
             </p>
         </fieldset>
     </form>
+
+    <script src='node_modules/zepto/zepto.min.js'></script>
+    <script src='node_modules/validate-js/validate.js'></script>
+    <script src='main.js'></script>
 </body>
 </html>
