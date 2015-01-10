@@ -18,7 +18,6 @@
     },
     {
       name: 'animal',
-      // TODO: Add custom rule for "at least two values".
       rules: 'required'
     },
     {
@@ -28,9 +27,10 @@
     }
   ];
 
-  var validator = new FormValidator('awesome_form', rules, function(errors) {
+  var validator = new FormValidator('awesome_form', rules, function(errors, event) {
     if (errors.length > 0) {
       console.table(errors);
+      event.preventDefault();
       errors.forEach(displayError);
     }
   });
