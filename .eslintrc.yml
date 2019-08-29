@@ -1,0 +1,77 @@
+root: true
+
+parser: 'babel-eslint'
+parserOptions:
+  ecmaVersion: 8
+  sourceType: 'module'
+  ecmaFeatures:
+    jsx: true
+    experimentalObjectRestSpread: true
+
+env:
+  es6: true
+  browser: true
+
+extends:
+  - 'prettier'
+  - 'airbnb'
+
+plugins:
+  - 'prettier'
+  - 'jest'
+
+rules:
+  arrow-parens:
+    - 'error'
+    - 'as-needed'
+  operator-linebreak: 'off'
+  comma-dangle: 'off'
+  no-return-assign: 'off'
+  global-require: 'off'
+  implicit-arrow-linebreak: 'off'
+  import/no-unresolved: 'off'
+  jsx-a11y/href-no-hash: 'off'
+  jsx-a11y/click-events-have-key-events: 'off'
+  jsx-a11y/no-static-element-interactions: 'off'
+  no-underscore-dangle: 'off'
+  no-unused-expressions: 'off'
+  object-curly-newline: 'off'
+  prettier/prettier: 'error'
+  react/destructuring-assignment: 'off'
+  react/jsx-indent: 'off'
+  react/jsx-filename-extension: 'off'
+  react/jsx-one-expression-per-line: 'off'
+  react/no-array-index-key: 'off'
+  react/prop-types: 'off'
+  func-names: 'off'
+  generator-star-spacing: 'off'
+  no-param-reassign: 'off'
+  function-paren-newline: 'off'
+  react/sort-comp: 'off'
+  consistent-return: 'off'
+  no-throw-literal: 'off'
+  nonblock-statement-body-position: 'off'
+  indent: 'off'
+  curly: 'off'
+  jsx-a11y/anchor-is-valid: 'off'
+  import/prefer-default-export: 'off'
+  react/jsx-wrap-multilines: 'off'
+  no-confusing-arrow: 'off'
+  space-before-function-paren: 'off'
+  import/no-extraneous-dependencies: 'off'
+  class-methods-use-this: 'off'
+  camelcase: 'off'
+  jsx-a11y/label-has-for: 'off'
+  react/no-unescaped-entities: 'off'
+
+globals:
+  __static: true
+  beforeEach: true
+  afterEach: true
+  beforeAll: true
+  afterAll: true
+  it: true
+  describe: true
+  expect: true
+  jest: true
+  test: true
