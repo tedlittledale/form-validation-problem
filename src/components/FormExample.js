@@ -163,7 +163,7 @@ const FormExample = () => {
     mode: 'onBlur' //validate each field on blur event
   });
   const onSubmit = data => {
-    console.log(data);
+    alert(JSON.stringify(data));
   };
   const { 'animal.tiger': tiger } = getValues();
   const tigerSelected = !!tiger; //has the tiger checkbox been selected
@@ -262,7 +262,6 @@ const FormExample = () => {
       <fieldset>
         <div>
           <input
-            name="submit"
             type="submit"
             value="Create account"
             ref={register}
