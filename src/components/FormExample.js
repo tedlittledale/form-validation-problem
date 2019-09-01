@@ -15,7 +15,9 @@ const FormWrapper = styled('form')`
   label {
     vertical-align: middle;
   }
-  div {
+  legend {
+    display: block;
+    padding: 10px 10px 10px 0;
   }
   /*
             Note: Don't change font-family on password inputs,
