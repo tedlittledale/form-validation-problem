@@ -39,7 +39,6 @@ describe('<Form.Container />', () => {
         timeout: 50
       })
     ).rejects.toThrow();
-    console.log('here');
     expect(getByText('This is not a valid email address')).not.toBeNull();
   });
   //TODO

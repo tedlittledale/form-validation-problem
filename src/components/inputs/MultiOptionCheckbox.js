@@ -19,10 +19,10 @@ const MultiOptionCheckbox = ({
             type="checkbox"
             name={`${name}.${optionName}`}
             value={optionName}
-            id={optionName}
+            id={`${name}${optionName}`}
             ref={register}
           />
-          <label htmlFor={`${name}.${optionName}`}>{label}</label>
+          <label htmlFor={`${name}${optionName}`}>{label}</label>
         </Fragment>
       ))}
 
